@@ -2,4 +2,8 @@
 
 #include "../physic.h"
 
+VOID physic::object_dynamic::dynamic_update( physic::object &Obj )
+{
+}
+
 /* END OF 'object_dynamic.cpp' FILE */

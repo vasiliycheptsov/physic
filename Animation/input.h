@@ -6,7 +6,7 @@
 #include "../physicdef.h"
 
 /* Project namespace */
-namespace tlr
+namespace physic
 {
   /* Joystick button selection class */
   class joy_button
@@ -60,7 +60,7 @@ namespace tlr
     BOOL IsPressed( joy_button KeyValue );
 
   }; /* End of 'anim' class */
-} /* end of 'tlr' namespace */
+} /* end of 'physic' namespace */
 
 #endif /* __INPUT_H_ */
 

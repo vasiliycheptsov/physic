@@ -10,7 +10,7 @@
  *   - render window handle reference:
  *       HWND &hWndRender;
  */
-tlr::render::render( HWND &hWndRender ) :
+physic::render::render( HWND &hWndRender ) :
   hWnd(hWndRender), hDC(GetDC(hWnd)), hRC(NULL)
 {
   INT i;
@@ -56,12 +56,12 @@ tlr::render::render( HWND &hWndRender ) :
   wglUseFontOutlines(hDC, 0, 256, 30 * 3030, 0.00051, 0.1, WGL_FONT_POLYGONS, NULL);
   */
   glListBase(3030);
-} /* End of 'tlr::render::render' function */
+} /* End of 'physic::render::render' function */
 
 /* Class destructor.
  * ARGUMENTS: None.
  */
-tlr::render::~render( VOID )
+physic::render::~render( VOID )
 {
   /* Destroy rendering context */
   wglMakeCurrent(NULL, NULL);
@@ -69,7 +69,7 @@ tlr::render::~render( VOID )
     wglDeleteContext(hRC);
   if (hDC != NULL)
     ReleaseDC(hWnd, hDC);
-} /* End of 'tlr::render::~render' function */
+} /* End of 'physic::render::~render' function */
 
 /* Resize render window handle function.
  * ARGUMENTS:
@@ -77,7 +77,7 @@ tlr::render::~render( VOID )
  *       INT W, H;
  * RETURNS: None.
  */
-VOID tlr::render::Resize( INT W, INT H )
+VOID physic::render::Resize( INT W, INT H )
 {
   /* Store new size */
   Width = W;
@@ -86,34 +86,34 @@ VOID tlr::render::Resize( INT W, INT H )
   /* Update camera projection data */
   glViewport(0, 0, W, H);
 
-} /* End of 'tlr::render::Resize' function */
+} /* End of 'physic::render::Resize' function */
 
 /* Start frame rendering function.
  * ARGUMENTS: None.
  * RETURNS: None.
  */
-VOID tlr::render::StartFrame( VOID )
+VOID physic::render::StartFrame( VOID )
 {
   glClear(GL_COLOR_BUFFER_BIT);
-} /* End of 'tlr::render::StartFrame' function */
+} /* End of 'physic::render::StartFrame' function */
 
 /* Finish  frame rendering function.
  * ARGUMENTS: None.
  * RETURNS: None.
  */
-VOID tlr::render::EndFrame( VOID )
+VOID physic::render::EndFrame( VOID )
 {
   glFinish();
-} /* End of 'tlr::render::EndFrame' function */
+} /* End of 'physic::render::EndFrame' function */
 
 /* Copy current frame to window function.
  * ARGUMENTS: None.
  * RETURNS: None.
  */
-VOID tlr::render::CopyFrame( VOID )
+VOID physic::render::CopyFrame( VOID )
 {
   SwapBuffers(hDC);
-} /* End of 'tlr::render::CopyFrame' function */
+} /* End of 'physic::render::CopyFrame' function */
 
 /* Output formatted text function.
  * ARGUMENTS:
@@ -124,7 +124,7 @@ VOID tlr::render::CopyFrame( VOID )
  * RETURNS:
  *   (INT) number of output symbols.
  */
-INT tlr::render::PrintF( DBL X, DBL Y, CHAR *Fmt, ... )
+INT physic::render::PrintF( DBL X, DBL Y, CHAR *Fmt, ... )
 {
   INT ret;
   va_list ap;
@@ -137,6 +137,6 @@ INT tlr::render::PrintF( DBL X, DBL Y, CHAR *Fmt, ... )
   glCallLists(ret, GL_UNSIGNED_BYTE, Buf);
   va_end(ap);
   return ret;
-} /* End of 'tlr::render::PrintF' function */
+} /* End of 'physic::render::PrintF' function */
 
 /* END OF 'RENDER.CPP' FILE */

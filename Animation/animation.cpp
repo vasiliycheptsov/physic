@@ -7,33 +7,33 @@
  *   - render window handle:
  *       HWND &hWndRender;
  */
-tlr::anim::anim( VOID ) :
+physic::anim::anim( VOID ) :
   render(const_cast<HWND &>(win::hWnd)),
   input(const_cast<HWND &>(win::hWnd))
 {
   Units << new navigation_unit();
-} /* End of 'tlr::anim::anim' constructor */
+} /* End of 'physic::anim::anim' constructor */
 
 /* Class destructor.
  * ARGUMENTS:
  *   - render window handle:
  *       HWND hWndRender;
  */
-tlr::anim::~anim( VOID )
+physic::anim::~anim( VOID )
 {
   /* Remove all units */
   for (INT i = 0; i < Units.Size(); i++)
     delete Units[i];
-} /* End of 'tlr::anim::~anim' destructor */
+} /* End of 'physic::anim::~anim' destructor */
 
 /* Resize window handle function.
  * ARGUMENTS: None.
  * RETURNS: None.
  */
-VOID tlr::anim::Resize( VOID )
+VOID physic::anim::Resize( VOID )
 {
   render::Resize(win::W, win::H);
-} /* End of 'tlr::anim::Resize' function */
+} /* End of 'physic::anim::Resize' function */
 
 /* Redraw window content function.
  * ARGUMENTS:
@@ -41,7 +41,7 @@ VOID tlr::anim::Resize( VOID )
  *       HDC hDC;
  * RETURNS: None.
  */
-VOID tlr::anim::Paint( HDC hDC )
+VOID physic::anim::Paint( HDC hDC )
 {
   StartFrame();
   for (INT i = 0; i < Units.Size(); i++)
@@ -53,25 +53,25 @@ VOID tlr::anim::Paint( HDC hDC )
   EndFrame();
   CopyFrame();
   IncrFrameCount();
-} /* End of 'tlr::anim::Paint' function */
+} /* End of 'physic::anim::Paint' function */
 
 /* Activate window changing handle function.
  * ARGUMENTS: None.
  * RETURNS: None.
  */
-VOID tlr::anim::Activate( VOID )
+VOID physic::anim::Activate( VOID )
 {
   if (IsActive)
     SetPause(FALSE);
   else
     SetPause(TRUE);
-} /* End of 'tlr::anim::Activate' function */
+} /* End of 'physic::anim::Activate' function */
 
 /* Timer event handle function.
  * ARGUMENTS: None.
  * RETURNS: None.
  */
-VOID tlr::anim::Timer( VOID )
+VOID physic::anim::Timer( VOID )
 {
   /* Handle timer */
   timer::Response();
@@ -87,7 +87,7 @@ VOID tlr::anim::Timer( VOID )
     Units[i]->Response(this);
 
 
-} /* End of 'tlr::anim::Timer' function */
+} /* End of 'physic::anim::Timer' function */
 
 /* Add unit to animation stock function.
  * ARGUMENTS:
@@ -96,11 +96,11 @@ VOID tlr::anim::Timer( VOID )
  * RETURNS:
  *   (anim &) self reference.
  */
-tlr::anim & tlr::anim::operator<<( tlr::unit *Uni )
+physic::anim & physic::anim::operator<<( physic::unit *Uni )
 {
   Units << Uni;
   return *this;
-} /* End of 'tlr::anim::operator<<' function */
+} /* End of 'physic::anim::operator<<' function */
 
 /* Delete unit from animation system function.
  * ARGUMENTS:
@@ -108,7 +108,7 @@ tlr::anim & tlr::anim::operator<<( tlr::unit *Uni )
  *       unit *Uni;
  * RETURNS: None.
  */
-VOID tlr::anim::DeleteUnit( unit *Uni )
+VOID physic::anim::DeleteUnit( unit *Uni )
 {
   for (INT i = 0; i < Units.Size(); i++)
     if (Units[i] == Uni)
@@ -116,6 +116,6 @@ VOID tlr::anim::DeleteUnit( unit *Uni )
       delete Units[i];
       Units.StableDelete(i);
     }
-} /* End of 'tlr::anim::DeleteUnit' function */
+} /* End of 'physic::anim::DeleteUnit' function */
 
 /* END OF 'animation.cpp' FILE */

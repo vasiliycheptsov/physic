@@ -191,6 +191,10 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\extrasdef.h"
+				>
+			</File>
+			<File
 				RelativePath=".\physic.h"
 				>
 			</File>
@@ -302,7 +306,51 @@
 				Name="World"
 				>
 				<File
-					RelativePath=".\Object\world.h"
+					RelativePath=".\World\object_manager.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\World\object_manager.h"
+					>
+				</File>
+				<File
+					RelativePath=".\World\world.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\World\world.h"
+					>
+				</File>
+				<File
+					RelativePath=".\World\world_collision.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\World\world_collision.h"
+					>
+				</File>
+				<File
+					RelativePath=".\World\world_dynamic.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\World\world_dynamic.h"
+					>
+				</File>
+				<File
+					RelativePath=".\World\world_model.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\World\world_model.h"
+					>
+				</File>
+				<File
+					RelativePath=".\World\world_visual.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\World\world_visual.h"
 					>
 				</File>
 			</Filter>

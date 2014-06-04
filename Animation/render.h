@@ -14,7 +14,7 @@
 #include "../physicdef.h"
 
 /* Project namespace */
-namespace tlr
+namespace physic
 {
   /* Render engine through OpenGL class */
   class render : public timer
@@ -49,7 +49,7 @@ namespace tlr
     /* Output formatted text function */
     static INT PrintF( DBL X, DBL Y, CHAR *Fmt, ... );
   }; /* End of 'anim' class */
-} /* end of 'tlr' namespace */
+} /* end of 'physic' namespace */
 
 #endif /* __RENDER_H_ */
 

@@ -6,20 +6,25 @@
 #include "../physicdef.h"
 
 /* Main project namespace */
-namespace tlr
+namespace physic
 {
-  class object_model
+  class object_model : public object_collision, public object_dynamic
   {
   private:
     vec Velocity;  // Object velocity
+    FLT Mass;      // Object mass
 
   public:
     /* Default class constructor function */
-    object_model( VOID ) : Velocity(0)
-    {
-    } /* End of 'tlr::object_model::object_model' function */
-  }; /* End of 'tlr::object_model' class */
-} /* end of 'tlr' namespace */
+    object_model( VOID );
+
+    /* User class constructor function */
+    object_model( vec NewVelocity, FLT NewMass );
+
+    /* Kinematic update function */
+    VOID model_update( object &Obj );
+  }; /* End of 'physic::object_model' class */
+} /* end of 'physic' namespace */
 
 #endif /* __OBJECT_MODEL_H_ */
 

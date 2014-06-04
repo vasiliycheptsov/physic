@@ -6,7 +6,7 @@
 #include "../physicdef.h"
 
 /* Project namespace */
-namespace tlr
+namespace physic
 {
   /* Synchronization timer handle class */
   class timer
@@ -125,7 +125,7 @@ namespace tlr
       ShiftTime += Shift * TimesPerSecond;
     } /* End of 'SetTimeShift' function */
   }; /* End of 'timer' class */
-} /* end of 'tlr' namespace */
+} /* end of 'physic' namespace */
 
 #endif /* __TIMER_H_ */
 

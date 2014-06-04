@@ -6,9 +6,15 @@
 #include "../physicdef.h"
 
 /* Main project namespace */
-namespace tlr
+namespace physic
 {
-} /* end of 'tlr' namespace */
+  /* Dymanic object class */
+  class object_dynamic
+  {
+  public:
+    VOID dynamic_update( object &Obj );
+  };
+} /* end of 'physic' namespace */
 
 #endif /* __OBJECT_DYNAMIC_H_ */
 

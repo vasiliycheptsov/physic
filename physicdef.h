@@ -3,11 +3,7 @@
 #ifndef __PHYSICDEF_H_
 #define __PHYSICDEF_H_
 
-#include <assert.h>
-#include <commondf.h>
-
-#include "tsg/tsg.h"
-#include "stock.h"
+#include "extrasdef.h"
 
 /* Debug memory allocation support */
 #ifdef _DEBUG
@@ -39,13 +35,16 @@ typedef unsigned __int64 UINT64;
 typedef double DBL;
 typedef float FLT;
 
+#include "tsg/tsg.h"
+#include "stock.h"
+
 /* Project namespace */
-namespace tlr
+namespace physic
 {
   /* TSG base types */
   typedef tsg::TVec<FLT> vec;
 
-  /* Forward references */
+  /* Forward animation references */
   class win;
   class timer;
   class input;
@@ -53,7 +52,22 @@ namespace tlr
   class anim;
   class unit;
   class navigation_unit;
-} /* end of 'tlr' namespace */
+
+  /* Forward object references */
+  class onject_visual;
+  class object_dynamic;
+  class object_collision;
+  class object_model;
+  class object;
+
+  /* Forward world references */
+  class object_manager;
+  class world_visual;
+  class world_dynamic;
+  class world_collision;
+  class world_model;
+  class world;
+} /* end of 'physic' namespace */
 
 #endif /* __PHYSICDEF_H_ */
 

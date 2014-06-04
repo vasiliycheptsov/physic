@@ -6,9 +6,13 @@
 #include "../physicdef.h"
 
 /* Main project namespace */
-namespace tlr
+namespace physic
 {
-} /* end of 'tlr' namespace */
+  /* Collision object class */
+  class object_collision
+  {
+  };
+} /* end of 'physic' namespace */
 
 #endif /* __OBJECT_COLLISION_H_ */
 

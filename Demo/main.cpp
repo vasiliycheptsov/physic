@@ -2,10 +2,10 @@
 
 #include "../physic.h"
 
-class tst_unit : public tlr::unit
+class tst_unit : public physic::unit
 {
 private:
-  VOID Render( tlr::anim *Ani )
+  VOID Render( physic::anim *Ani )
   {
     glBegin(GL_TRIANGLES);
       glColor3d(0, 0, 0);
@@ -32,7 +32,7 @@ private:
 INT WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
                     CHAR *CmdStr, INT CmdShow )
 {
-  tlr::anim MyAnim;
+  physic::anim MyAnim;
 
   MyAnim << new tst_unit();
 

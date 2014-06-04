@@ -6,7 +6,7 @@
 #include "../physicdef.h"
 
 /* Project namespace */
-namespace tlr
+namespace physic
 {
   /* Window handle class */
   class win
@@ -137,7 +137,7 @@ namespace tlr
     {
     } /* End of 'Timer' function */
   }; /* End of 'win' class */
-} /* end of 'tlr' namespace */
+} /* end of 'physic' namespace */
 
 #endif /* __WINDOW_H_ */
 

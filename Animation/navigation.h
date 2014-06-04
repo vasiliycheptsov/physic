@@ -6,7 +6,7 @@
 #include "../physicdef.h"
 
 /* Main project namespace */
-namespace tlr
+namespace physic
 {
   /* Navigation unit */
   class navigation_unit : public unit
@@ -22,7 +22,7 @@ namespace tlr
       glLoadIdentity();
       glTranslatef(ShiftX / 100.0, ShiftY / 100.0, 0);
       glScalef((FLT)Ani->Height / Ani->Width * Zoom, Zoom, 1);
-    } /* End of 'tlr::navigation_unit::Render' function */
+    } /* End of 'physic::navigation_unit::Render' function */
 
     /* Responce unit function */
     VOID Response( anim *Ani )
@@ -37,15 +37,15 @@ namespace tlr
         ShiftX--;
       if (Ani->Keys[VK_LEFT])
         ShiftX++;
-    } /* End of 'tlr::navigation_unit::Response' function */
+    } /* End of 'physic::navigation_unit::Response' function */
 
   public:
     /* Default class constructor function */
     navigation_unit( VOID ) : ShiftX(0), ShiftY(0)
     {
-    } /* End of 'tlr::navigation_unit::navigation_unit' function */
-  }; /* End of 'tlr::navigation_unit' class */
-} /* end of 'tlr' namespace */
+    } /* End of 'physic::navigation_unit::navigation_unit' function */
+  }; /* End of 'physic::navigation_unit' class */
+} /* end of 'physic' namespace */
 
 #endif /* __NAVIGATION_H_ */
 

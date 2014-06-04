@@ -6,16 +6,18 @@
 #include "../physicdef.h"
 
 /* Main project namespace */
-namespace tlr
+namespace physic
 {
   /* Visual object class */
   class object_visual
   {
   public:
     /* Render object function */
-    virtual VOID Render( VOID ) = 0;
-  }; /* End of 'tlr::object_visual' class */
-} /* end of 'tlr' namespace */
+    virtual VOID Render( object &Obj )
+    {
+    } /* End of 'physic::object_visual::Render' function */
+  }; /* End of 'physic::object_visual' class */
+} /* end of 'physic' namespace */
 
 #endif /* __OBJECT_VISUAL_H_ */
 

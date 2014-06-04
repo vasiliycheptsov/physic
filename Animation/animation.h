@@ -8,7 +8,7 @@
 #include "../physicdef.h"
 
 /* Project namespace */
-namespace tlr
+namespace physic
 {
   /* Animation object base class */
   class unit
@@ -102,7 +102,7 @@ namespace tlr
     /* Delete unit from animation system function */
     VOID DeleteUnit( unit *Uni );
   }; /* End of 'anim' class */
-} /* end of 'tlr' namespace */
+} /* end of 'physic' namespace */
 
 #endif /* __ANIMATION_H_ */
 

@@ -38,7 +38,7 @@ static LRESULT CALLBACK MouseHook( INT Code, WPARAM wParam, LPARAM lParam )
 /* Class constructor.
  * ARGUMENTS: None.
  */
-tlr::input::input( HWND &hWndRef ) : hWnd(hWndRef)
+physic::input::input( HWND &hWndRef ) : hWnd(hWndRef)
 {
   /* Register mouse event hook handle */
   SetWindowsHookEx(WH_MOUSE_LL, MouseHook, GetModuleHandle(NULL), 0);
@@ -53,13 +53,13 @@ tlr::input::input( HWND &hWndRef ) : hWnd(hWndRef)
 
   /* Read data first time */
   Response();
-} /* End of 'tlr::input::input' function */
+} /* End of 'physic::input::input' function */
 
 /* Responce input devices function.
  * ARGUMENTS: None.
  * RETURNS: None.
  */
-VOID tlr::input::Response( VOID )
+VOID physic::input::Response( VOID )
 {
   /*** Keyboard ***/
 
@@ -121,7 +121,7 @@ VOID tlr::input::Response( VOID )
       }
     }
   }
-} /* End of 'tlr::input::Response' function */
+} /* End of 'physic::input::Response' function */
 
 /* Check keyboard keys once pressed function.
  * ARGUMENTS:
@@ -129,11 +129,11 @@ VOID tlr::input::Response( VOID )
  *       INT KeyValue;
  * RETURNS: None.
  */
-BOOL tlr::input::IsPressed( INT KeyValue )
+BOOL physic::input::IsPressed( INT KeyValue )
 {
   assert(KeyValue >= 0 && KeyValue < 256);
   return Keys[KeyValue] && !KeysOld[KeyValue];
-} /* End of 'tlr::input::Response' function */
+} /* End of 'physic::input::Response' function */
 
 /* Check joystick buttons once pressed function.
  * ARGUMENTS:
@@ -141,10 +141,10 @@ BOOL tlr::input::IsPressed( INT KeyValue )
  *       joy_button KeyValue;
  * RETURNS: None.
  */
-BOOL tlr::input::IsPressed( joy_button KeyValue )
+BOOL physic::input::IsPressed( joy_button KeyValue )
 {
   assert(KeyValue.Button >= 0 && KeyValue.Button < 32);
   return JBut[KeyValue.Button] && !JButOld[KeyValue.Button];
-} /* End of 'tlr::input::Response' function */
+} /* End of 'physic::input::Response' function */
 
 /* END OF 'input.cpp' FILE */

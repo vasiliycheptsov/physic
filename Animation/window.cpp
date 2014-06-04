@@ -5,7 +5,7 @@
 /* Class constructor.
  * ARGUMENTS: None.
  */
-tlr::win::win( VOID ) :
+physic::win::win( VOID ) :
   WinW(0), WinH(0), hWndValue(NULL),
   ActiveFlag(FALSE), IsInit(FALSE), IsFullScreen(FALSE),
   hWnd(hWndValue), W(WinW), H(WinH), IsActive(ActiveFlag),
@@ -38,13 +38,13 @@ tlr::win::win( VOID ) :
   ShowWindow(hWnd, SW_SHOWNORMAL);
   UpdateWindow(hWnd);
   PostMessage(hWnd, WM_TIMER, InitializationTimer, 0);
-} /* End of 'tlr::win::win' constructor */
+} /* End of 'physic::win::win' constructor */
 
 /* Main message loop function.
  * ARGUMENTS: None.
  * RETURNS: None.
  */
-VOID tlr::win::Run( VOID )
+VOID physic::win::Run( VOID )
 {
   MSG msg;
 
@@ -61,16 +61,16 @@ VOID tlr::win::Run( VOID )
     else
       if (IsInit)
         InvalidateRect(hWnd, NULL, FALSE);
-} /* End of 'tlr::win::Run' function */
+} /* End of 'physic::win::Run' function */
 
 /* Exit from main loop function.
  * ARGUMENTS: None.
  * RETURNS: None.
  */
-VOID tlr::win::DoExit( VOID )
+VOID physic::win::DoExit( VOID )
 {
   PostMessage(hWnd, WM_CLOSE, 0, 0);
-} /* End of 'tlr::win::DoExit' function */
+} /* End of 'physic::win::DoExit' function */
 
 /* Goto fullscreen mode function.
  * ARGUMENTS:
@@ -79,7 +79,7 @@ VOID tlr::win::DoExit( VOID )
  * RETURNS:
  *   (BOOL) old full screen set flag value.
  */
-BOOL tlr::win::SetFullScreen( BOOL FullScreenFlag )
+BOOL physic::win::SetFullScreen( BOOL FullScreenFlag )
 {
   RECT rc;
  
@@ -127,7 +127,7 @@ BOOL tlr::win::SetFullScreen( BOOL FullScreenFlag )
   PostMessage(hWnd, WM_SIZE, 0,
     MAKELONG(rc.right, rc.bottom));
   return !IsFullScreen;
-} /* End of 'tlr::win::SetFullScreen' function */
+} /* End of 'physic::win::SetFullScreen' function */
 
 /* Window message handle function.
  * ARGUMENTS:
@@ -142,7 +142,7 @@ BOOL tlr::win::SetFullScreen( BOOL FullScreenFlag )
  * RETURNS:
  *   (LRESULT) - depending on message.
  */
-LRESULT CALLBACK tlr::win::WinFunc( HWND hWnd, UINT Msg,
+LRESULT CALLBACK physic::win::WinFunc( HWND hWnd, UINT Msg,
                                      WPARAM wParam, LPARAM lParam )
 {
   win *MyWindow;
@@ -179,7 +179,7 @@ LRESULT CALLBACK tlr::win::WinFunc( HWND hWnd, UINT Msg,
       return MyWindow->OnEraseBkgnd((HDC)wParam);
     }
   return DefWindowProc(hWnd, Msg, wParam, lParam);
-} /* End of 'tlr::win::WinFunc' function */
+} /* End of 'physic::win::WinFunc' function */
 
 /* WM_CREATE handle message function.
  * ARGUMENTS:
@@ -188,16 +188,16 @@ LRESULT CALLBACK tlr::win::WinFunc( HWND hWnd, UINT Msg,
  * RETURNS:
  *   (BOOL) - FALSE to close the window, TRUE if succeed.
  */
-BOOL tlr::win::OnCreate( CREATESTRUCT *CreateStruct )
+BOOL physic::win::OnCreate( CREATESTRUCT *CreateStruct )
 {
   return TRUE;
-} /* End of 'tlr::win::OnCreate' function */
+} /* End of 'physic::win::OnCreate' function */
 
 /* WM_DESTROY handle message function.
  * ARGUMENTS: None.
  * RETURNS: None.
  */
-VOID tlr::win::OnDestroy( VOID )
+VOID physic::win::OnDestroy( VOID )
 {
   /* Call user level deinitialization */
   if (IsInit)
@@ -207,7 +207,7 @@ VOID tlr::win::OnDestroy( VOID )
   }
   KillTimer(hWnd, 30);
   PostQuitMessage(30);
-} /* End of 'tlr::win::OnDestroy' function */
+} /* End of 'physic::win::OnDestroy' function */
 
 /* WM_SIZE  handle message function.
  * ARGUMENTS:
@@ -217,7 +217,7 @@ VOID tlr::win::OnDestroy( VOID )
  *       INT Width, Height;
  * RETURNS: None.
  */
-VOID tlr::win::OnSize( UINT State, INT Width, INT Height )
+VOID physic::win::OnSize( UINT State, INT Width, INT Height )
 {
   WinW = Width;
   WinH = Height;
@@ -225,13 +225,13 @@ VOID tlr::win::OnSize( UINT State, INT Width, INT Height )
   if (IsInit)
     Resize();
   OnPaint();
-} /* End of 'tlr::win::OnSize' function */
+} /* End of 'physic::win::OnSize' function */
 
 /* WM_PAINT  handle message function.
  * ARGUMENTS: None.
  * RETURNS: None.
  */
-VOID tlr::win::OnPaint( VOID )
+VOID physic::win::OnPaint( VOID )
 {
   HDC hDC;
   PAINTSTRUCT ps;
@@ -240,7 +240,7 @@ VOID tlr::win::OnPaint( VOID )
   if (IsInit)
     Paint(hDC);
   EndPaint(hWnd, &ps);
-} /* End of 'tlr::win::OnPaint' function */
+} /* End of 'physic::win::OnPaint' function */
 
 /* WM_ERASEBKGND handle message function.
  * ARGUMENTS:
@@ -249,13 +249,13 @@ VOID tlr::win::OnPaint( VOID )
  * RETURNS:
  *   (BOOL) TRUE if background cleared, else FALSE.
  */
-BOOL tlr::win::OnEraseBkgnd( HDC hDC )
+BOOL physic::win::OnEraseBkgnd( HDC hDC )
 {
   if (!IsInit)
     return DefWindowProc(hWnd, WM_ERASEBKGND, (WPARAM)hDC, 0);
   Erase(hDC);
   return FALSE;
-} /* End of 'tlr::win::OnEraseBkgnd' function */
+} /* End of 'physic::win::OnEraseBkgnd' function */
 
 /* WM_ACTIVATE window message handle function.
  * ARGUMENTS:
@@ -267,14 +267,14 @@ BOOL tlr::win::OnEraseBkgnd( HDC hDC )
  *       BOOL IsMinimized;
  * RETURNS: None.
  */
-VOID tlr::win::OnActivate( UINT Reason, HWND hWndActDeact, BOOL IsMinimized )
+VOID physic::win::OnActivate( UINT Reason, HWND hWndActDeact, BOOL IsMinimized )
 {
   ActiveFlag = Reason == WA_CLICKACTIVE || Reason == WA_ACTIVE;
 
   /* Call user level activate handle function */
   if (IsInit)
     Activate();
-} /* End of 'tlr::win::OnActivate' function */
+} /* End of 'physic::win::OnActivate' function */
 
 /* WM_TIMER handle message function.
  * ARGUMENTS:
@@ -283,7 +283,7 @@ VOID tlr::win::OnActivate( UINT Reason, HWND hWndActDeact, BOOL IsMinimized )
  * RETURNS:
  *   (BOOL) TRUE if background cleared, else FALSE.
  */
-VOID tlr::win::OnTimer( INT Id )
+VOID physic::win::OnTimer( INT Id )
 {
   if (Id == InitializationTimer)
   {
@@ -298,6 +298,6 @@ VOID tlr::win::OnTimer( INT Id )
   else
     if (IsInit)
       Timer();
-} /* End of 'tlr::win::OnTimer' function */
+} /* End of 'physic::win::OnTimer' function */
 
 /* END OF 'window.cpp' FILE */
