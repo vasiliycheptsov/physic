@@ -390,7 +390,19 @@
 					>
 				</File>
 				<File
+					RelativePath=".\Object\object_parameters.h"
+					>
+				</File>
+				<File
 					RelativePath=".\Object\object_visual.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="Utils"
+				>
+				<File
+					RelativePath=".\Utils\profiler.h"
 					>
 				</File>
 			</Filter>

@@ -2,8 +2,21 @@
 
 #include "../physic.h"
 
-VOID physic::object_dynamic::dynamic_update( physic::object &Obj )
+/* Class constructor function */
+physic::object_dynamic::object_dynamic( VOID ) : IsInit(FALSE)
 {
-}
+} /* End of 'physic::object_dynamic::object_dynamic' function */
+
+/* Class init function */
+VOID physic::object_dynamic::Init( boost::weak_ptr<physic::object_parameters> &NewObjectParam )
+{
+  ObjectParam = NewObjectParam;
+  IsInit = TRUE;
+} /* End of 'physic::object_dynamic::Init' function */
+
+/* Dynamic update function */
+VOID physic::object_dynamic::DynamicUpdate( DBL DeltaTime )
+{
+} /* End of 'physic::object_dynamic::DynamicUpdate' function */
 
 /* END OF 'object_dynamic.cpp' FILE */

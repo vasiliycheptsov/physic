@@ -2,11 +2,41 @@
 
 #include "../physic.h"
 
+/* Class destructor function */
+physic::object_manager::~object_manager( VOID )
+{
+  ClearObjectCollection();
+} /* End of 'physic::object_manager::~object_manager' function */
+
 /* Add new object function */
 physic::object_manager physic::object_manager::AddObject( physic::object &Obj )
 {
-  Objects.push_back(boost::make_shared<object>(Obj));
+  ObjectCollection.push_back(boost::make_shared<object>(Obj));
   return *this;
 } /* End of 'physic::object_manager::AddObject' function */
+
+/* Delete object by index function */
+VOID physic::object_manager::DeleteSelectObject( INT Index )
+{
+  ObjectCollection.erase(ObjectCollection.begin() + Index);
+} /* End of 'physic::object_manager::DeleteSelectObject' function */
+
+/* Clear object collection function */
+VOID physic::object_manager::ClearObjectCollection( VOID )
+{
+  ObjectCollection.clear();
+} /* End of 'physic::object_manager::Delete
+
+/* Get number of objects in object collection function */
+INT physic::object_manager::GetNoofObjects( VOID )
+{
+  return ObjectCollection.size();
+} /* End of 'physic::object_manager::GetNoofObjects' function */
+
+/* Get object by index function */
+physic::object & physic::object_manager::Get( INT Index )
+{
+  return *ObjectCollection[Index].get();
+} /* End of 'physic::object_manager::GetObject' function */
 
 /* END OF 'object_manager.cpp' FILE */

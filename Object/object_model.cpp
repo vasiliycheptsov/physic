@@ -2,20 +2,24 @@
 
 #include "../physic.h"
 
-/* Default class constructor function */
-physic::object_model::object_model( VOID ) : Velocity(0, 0, 0), Mass(0)
+/* Class constructor function */
+physic::object_model::object_model( VOID ) : IsInit(FALSE)
 {
-} /* End of 'physic::object_model::object_model' function */
+} /* End of 'physic::opbject_model::object_model' function */
 
-/* User class constructor function */
-physic::object_model::object_model( physic::vec NewVelocity, FLT NewMass ) :
- Velocity(NewVelocity), Mass(NewMass)
+/* Class init function */
+VOID physic::object_model::Init( boost::weak_ptr<physic::object_parameters> &NewObjectParam )
 {
-} /* End of 'physic::object_model::object_model' function */
+  ObjectParam = NewObjectParam;
+  object_collision::Init(ObjectParam);
+  object_dynamic::Init(ObjectParam);
+  IsInit = TRUE;
+} /* End of 'physic::object_model::Init' function */
 
 /* Kinematic update function */
- VOID physic::object_model::model_update( physic::object &Obj )
- {
- } /* End of 'physic::object_model::model_update' function */
+VOID physic::object_model::ModelUpdate( DBL DeltaTime )
+{
+  ObjectParam.lock().get()->Position = ObjectParam.lock().get()->Velocity * DeltaTime;
+} /* End of 'physic::object_model::ModelUpdate' function */
 
 /* END OF 'object_model.cpp' FILE */

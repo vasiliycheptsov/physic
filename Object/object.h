@@ -5,14 +5,19 @@
 
 #include "../physicdef.h"
 
+/*
+ * Error with make weak_ptr
+ */
+
 /* Main project namespace */
 namespace physic
 {
   /* Object class */
-  class object : public object_visual, public object_model
+  class object : public object_parameters, public object_visual, public object_model
   {
-  private:
-    vec Coord;  // Object coordinate
+  public:
+    /* Class constructor function */
+    object( object_parameters &NewObjectParam );
   };
 }
 

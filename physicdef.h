@@ -44,6 +44,9 @@ namespace physic
   /* TSG base types */
   typedef tsg::TVec<FLT> vec;
 
+  /* Forward utils references */
+  class profiler;
+
   /* Forward animation references */
   class win;
   class timer;
@@ -54,6 +57,7 @@ namespace physic
   class navigation_unit;
 
   /* Forward object references */
+  class object_parameters;
   class onject_visual;
   class object_dynamic;
   class object_collision;

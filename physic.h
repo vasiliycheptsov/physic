@@ -3,6 +3,9 @@
 #ifndef __PHYSIC_H_
 #define __PHYSIC_H_
 
+/* Utils includes */
+#include "utils/profiler.h"
+
 /* Animation includes */
 #include "animation/window.h"
 #include "animation/timer.h"
@@ -12,6 +15,7 @@
 #include "animation/navigation.h"
 
 /* Object includes */
+#include "object/object_parameters.h"
 #include "object/object_collision.h"
 #include "object/object_dynamic.h"
 #include "object/object_model.h"

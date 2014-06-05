@@ -11,9 +11,25 @@ namespace physic
   /* Visual object class */
   class object_visual
   {
+  private:
+    boost::weak_ptr<object_parameters> ObjectParam;  // Pointer to object parameters
+    BOOL IsInit;                                     // Is class init flag
+
   public:
+    /* Class constructor function */
+    object_visual( VOID ) : IsInit(FALSE)
+    {
+    } /* End of 'physic::object_visual::object_visual' function */
+
+    /* Class init function */
+    VOID Init( boost::weak_ptr<object_parameters> &NewObjectParam )
+    {
+      ObjectParam = NewObjectParam;
+      IsInit = TRUE;
+    } /* End of 'physic::object_visual::Init' function */
+
     /* Render object function */
-    virtual VOID Render( object &Obj )
+    virtual VOID Render( VOID )
     {
     } /* End of 'physic::object_visual::Render' function */
   }; /* End of 'physic::object_visual' class */

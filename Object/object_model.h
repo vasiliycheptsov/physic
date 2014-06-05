@@ -11,18 +11,18 @@ namespace physic
   class object_model : public object_collision, public object_dynamic
   {
   private:
-    vec Velocity;  // Object velocity
-    FLT Mass;      // Object mass
+    boost::weak_ptr<object_parameters> ObjectParam;  // Object parameters
+    BOOL IsInit;                                     // Is class init flag
 
   public:
-    /* Default class constructor function */
+    /* Class constructor function */
     object_model( VOID );
 
-    /* User class constructor function */
-    object_model( vec NewVelocity, FLT NewMass );
+    /* Class init function */
+    VOID Init( boost::weak_ptr<object_parameters> &NewObjectParam );
 
     /* Kinematic update function */
-    VOID model_update( object &Obj );
+    VOID ModelUpdate( DBL DeltaTime );
   }; /* End of 'physic::object_model' class */
 } /* end of 'physic' namespace */
 
