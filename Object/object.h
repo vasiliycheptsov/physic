@@ -5,10 +5,6 @@
 
 #include "../physicdef.h"
 
-/*
- * Error with make weak_ptr
- */
-
 /* Main project namespace */
 namespace physic
 {

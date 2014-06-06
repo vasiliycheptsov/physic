@@ -3,15 +3,14 @@
 #include "../physic.h"
 
 /* Class constructor function */
-physic::object_dynamic::object_dynamic( VOID ) : IsInit(FALSE)
+physic::object_dynamic::object_dynamic( VOID ) : ObjectParam(NULL)
 {
 } /* End of 'physic::object_dynamic::object_dynamic' function */
 
 /* Class init function */
-VOID physic::object_dynamic::Init( boost::weak_ptr<physic::object_parameters> &NewObjectParam )
+VOID physic::object_dynamic::Init( physic::object_parameters *NewObjectParam )
 {
   ObjectParam = NewObjectParam;
-  IsInit = TRUE;
 } /* End of 'physic::object_dynamic::Init' function */
 
 /* Dynamic update function */

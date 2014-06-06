@@ -9,6 +9,15 @@ namespace physic
 {
   class world_collision
   {
+  private:
+    object_manager *ObjectCollection;  // Object collection
+
+  public:
+    /* Class constructor function */
+    world_collision( VOID );
+
+    /* Class init function */
+    VOID Init( object_manager *NewObjectCollection );
   };
 }
 

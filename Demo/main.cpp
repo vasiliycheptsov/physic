@@ -2,20 +2,6 @@
 
 #include "../physic.h"
 
-class tst_unit : public physic::unit
-{
-private:
-  VOID Render( physic::anim *Ani )
-  {
-    glBegin(GL_TRIANGLES);
-      glColor3d(0, 0, 0);
-      glVertex2d(1, -1);
-      glVertex2d(0, -1);
-      glVertex2d(-1, 0);
-    glEnd();
-  }
-};
-
 /* The main program function.
  * ARGUMENTS:
  *   - handle of application instance:
@@ -34,7 +20,8 @@ INT WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 {
   physic::anim MyAnim;
 
-  MyAnim << new tst_unit();
+  MyAnim << physic::world();
+  MyAnim.AddObject(physic::object(physic::object_parameters()), 0);
 
   MyAnim.Run();
   return 30;

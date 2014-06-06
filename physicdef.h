@@ -52,9 +52,8 @@ namespace physic
   class timer;
   class input;
   class render;
+  class navigation;
   class anim;
-  class unit;
-  class navigation_unit;
 
   /* Forward object references */
   class object_parameters;

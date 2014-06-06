@@ -11,15 +11,14 @@ namespace physic
   class object_model : public object_collision, public object_dynamic
   {
   private:
-    boost::weak_ptr<object_parameters> ObjectParam;  // Object parameters
-    BOOL IsInit;                                     // Is class init flag
+    object_parameters *ObjectParam;  // Object parameters
 
   public:
     /* Class constructor function */
     object_model( VOID );
 
     /* Class init function */
-    VOID Init( boost::weak_ptr<object_parameters> &NewObjectParam );
+    VOID Init( object_parameters *NewObjectParam );
 
     /* Kinematic update function */
     VOID ModelUpdate( DBL DeltaTime );

@@ -10,74 +10,13 @@
 /* Project namespace */
 namespace physic
 {
-  /* Animation object base class */
-  class unit
-  {
-  public:
-    /* Unit message sending class */
-    class msg
-    {
-    public:
-      INT Id;     // Message ID (user defined)
-      VOID *Data; // Message additional data
-
-      /* Class constructor.
-       * ARGUMENTS:
-       *   - message ID value:
-       *       INT NewId;
-       *   - message additional data pointer:
-       *       VOID *NewData;
-       */
-      msg( INT NewId = 0, VOID *NewData = NULL ) : Id(NewId), Data(NewData)
-      {
-      } /* End of 'msg' constructor */
-    }; /* End of 'msg' class */
-
-    /* New frame response function.
-     * ARGUMENTS:
-     *   - pointer to animation handle object:
-     *       anim *Ani;
-     * RETURNS: None.
-     */
-    virtual VOID Response( anim *Ani )
-    {
-    } /* End of 'Response' function */
-
-    /* Render object function.
-     * ARGUMENTS:
-     *   - pointer to animation handle object:
-     *       anim *Ani;
-     * RETURNS: None.
-     */
-    virtual VOID Render( anim *Ani )
-    {
-    } /* End of 'Render' function */
-
-    /* Handle message function.
-     * ARGUMENTS:
-     *   - message data reference:
-     *       msg &M;
-     * RETURNS:
-     *   (INT) due to message and unit type.
-     */
-    virtual INT Handle( msg &M )
-    {
-      return 0;
-    } /* End of 'Handle' function */
-
-    /* Class destructor */
-    virtual ~unit( VOID )
-    {
-    } /* End of '~unit' function */
-  };
-
   /* Animation handle class */
   class anim : public win, public render, public input
   {
   private:
-    /* Animation object stock */
-    stock<unit *> Units;
-  protected:
+    std::vector<boost::shared_ptr<world>> Worlds;  // Worlds
+    navigation Navigation;                         // Navigation elements
+
   public:
     /* Class constructor */
     anim( VOID );
@@ -96,11 +35,11 @@ namespace physic
     /* Timer event handle function */
     VOID Timer( VOID );
 
-    /* Add unit to animation stock function */
-    anim & operator<<( unit *Uni );
+    /* Operator '<<' - add new world to animation stock function */
+    anim & operator<<( world &NewWorld );
 
-    /* Delete unit from animation system function */
-    VOID DeleteUnit( unit *Uni );
+    /* Add new object to current world function */
+    anim & AddObject( object &NewObject, INT WorldIndex );
   }; /* End of 'anim' class */
 } /* end of 'physic' namespace */
 

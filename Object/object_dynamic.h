@@ -12,15 +12,14 @@ namespace physic
   class object_dynamic
   {
   private:
-    boost::weak_ptr<object_parameters> ObjectParam;  // Object parameters
-    BOOL IsInit;                                     // Is class init flag
+    object_parameters *ObjectParam;  // Object parameters
 
   public:
     /* Class constructor function */
     object_dynamic( VOID );
 
     /* Class init function */
-    VOID Init( boost::weak_ptr<object_parameters> &NewObjectParameters );
+    VOID Init( object_parameters *NewObjectParameters );
 
     /* Dynamic update function */
     VOID DynamicUpdate( DBL DeltaTime );

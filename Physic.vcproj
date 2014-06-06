@@ -226,6 +226,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\Animation\navigation.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\Animation\navigation.h"
 					>
 				</File>

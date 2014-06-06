@@ -9,6 +9,15 @@ namespace physic
 {
   class world_dynamic
   {
+  private:
+    object_manager *ObjectCollection;  // Object collection
+
+  public:
+    /* Constructor class function */
+    world_dynamic( VOID );
+
+    /* Init class function */
+    VOID Init( object_manager *NewObjectCollection );
   };
 }
 

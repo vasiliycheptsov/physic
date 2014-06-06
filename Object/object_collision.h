@@ -12,15 +12,14 @@ namespace physic
   class object_collision
   {
   private:
-    boost::weak_ptr<object_parameters> ObjectParam;  // Object parameters
-    BOOL IsInit;                                     // Is collision object init flag
+    object_parameters *ObjectParam;  // Object parameters
 
   public:
     /* Class constructor function */
     object_collision( VOID );
 
     /* Class init function */
-    VOID Init( boost::weak_ptr<object_parameters> &NewObjectParams );
+    VOID Init( object_parameters *NewObjectParams );
   };
 } /* end of 'physic' namespace */
 

@@ -11,7 +11,6 @@ physic::anim::anim( VOID ) :
   render(const_cast<HWND &>(win::hWnd)),
   input(const_cast<HWND &>(win::hWnd))
 {
-  Units << new navigation_unit();
 } /* End of 'physic::anim::anim' constructor */
 
 /* Class destructor.
@@ -21,9 +20,6 @@ physic::anim::anim( VOID ) :
  */
 physic::anim::~anim( VOID )
 {
-  /* Remove all units */
-  for (INT i = 0; i < Units.Size(); i++)
-    delete Units[i];
 } /* End of 'physic::anim::~anim' destructor */
 
 /* Resize window handle function.
@@ -44,10 +40,13 @@ VOID physic::anim::Resize( VOID )
 VOID physic::anim::Paint( HDC hDC )
 {
   StartFrame();
-  for (INT i = 0; i < Units.Size(); i++)
+  glPushAttrib(GL_ALL_ATTRIB_BITS);
+  Navigation.Render(this);
+  glPopAttrib();
+  for (INT i = 0; i < Worlds.size(); i++)
   {
     glPushAttrib(GL_ALL_ATTRIB_BITS);
-    Units[i]->Render(this);
+    Worlds[i].get()->Render(this);
     glPopAttrib();
   }
   EndFrame();
@@ -83,39 +82,28 @@ VOID physic::anim::Timer( VOID )
   input::Response();
 
   /* Hanlde animation objects */
-  for (INT i = 0; i < Units.Size(); i++)
-    Units[i]->Response(this);
-
-
+  Navigation.Response(this);
 } /* End of 'physic::anim::Timer' function */
 
-/* Add unit to animation stock function.
+/* Operator '<<' - add world to animation function.
  * ARGUMENTS:
  *   - pointer to unit to be add:
  *       unit *Uni;
  * RETURNS:
  *   (anim &) self reference.
  */
-physic::anim & physic::anim::operator<<( physic::unit *Uni )
+physic::anim & physic::anim::operator<<( physic::world &NewWorld )
 {
-  Units << Uni;
+  Worlds.push_back(boost::make_shared<world>(NewWorld));
   return *this;
 } /* End of 'physic::anim::operator<<' function */
 
-/* Delete unit from animation system function.
- * ARGUMENTS:
- *   - pointer to unit to be delete:
- *       unit *Uni;
- * RETURNS: None.
- */
-VOID physic::anim::DeleteUnit( unit *Uni )
+/* Add new object to current world function */
+physic::anim & physic::anim::AddObject( physic::object &NewObject, INT WorldIndex )
 {
-  for (INT i = 0; i < Units.Size(); i++)
-    if (Units[i] == Uni)
-    {
-      delete Units[i];
-      Units.StableDelete(i);
-    }
-} /* End of 'physic::anim::DeleteUnit' function */
+  if (WorldIndex >= 0 && WorldIndex < Worlds.size())
+    (*Worlds[WorldIndex].get()) << NewObject;
+  return *this;
+} /* End of 'physic::anim::AddObject' function */
 
 /* END OF 'animation.cpp' FILE */

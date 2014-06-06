@@ -11,8 +11,8 @@
 #include "animation/timer.h"
 #include "animation/render.h"
 #include "animation/input.h"
-#include "animation/animation.h"
 #include "animation/navigation.h"
+#include "animation/animation.h"
 
 /* Object includes */
 #include "object/object_parameters.h"

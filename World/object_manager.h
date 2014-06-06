@@ -18,8 +18,8 @@ namespace physic
     /* Class destructor function */
     ~object_manager( VOID );
 
-    /* Add new object function */
-    object_manager AddObject( object &Obj );
+    /* Operator '<<' - add new object function */
+    object_manager operator<<( object &Obj );
 
     /* Delete object by index function */
     VOID DeleteSelectObject( INT Index );
@@ -28,10 +28,10 @@ namespace physic
     VOID ClearObjectCollection( VOID );
 
     /* Get number of objects in object collection function */
-    INT GetNoofObjects( VOID );
+    INT Size( VOID );
 
-    /* Get object by index function */
-    object & Get( INT Index );
+    /* Operator '[]' - get object by index function */
+    object & operator[]( INT Index );
   }; /* End of 'physic::object_manager' class */
 } /* end of 'physic' namespace */
 
