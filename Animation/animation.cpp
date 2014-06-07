@@ -46,7 +46,7 @@ VOID physic::anim::Paint( HDC hDC )
   for (INT i = 0; i < Worlds.size(); i++)
   {
     glPushAttrib(GL_ALL_ATTRIB_BITS);
-    Worlds[i].get()->Render(this);
+    Worlds[i].Render(this);
     glPopAttrib();
   }
   EndFrame();
@@ -94,7 +94,7 @@ VOID physic::anim::Timer( VOID )
  */
 physic::anim & physic::anim::operator<<( physic::world &NewWorld )
 {
-  Worlds.push_back(boost::make_shared<world>(NewWorld));
+  Worlds.push_back(NewWorld);
   return *this;
 } /* End of 'physic::anim::operator<<' function */
 
@@ -102,7 +102,7 @@ physic::anim & physic::anim::operator<<( physic::world &NewWorld )
 physic::anim & physic::anim::AddObject( physic::object &NewObject, INT WorldIndex )
 {
   if (WorldIndex >= 0 && WorldIndex < Worlds.size())
-    (*Worlds[WorldIndex].get()) << NewObject;
+    Worlds[WorldIndex] << NewObject;
   return *this;
 } /* End of 'physic::anim::AddObject' function */
 

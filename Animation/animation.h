@@ -14,8 +14,8 @@ namespace physic
   class anim : public win, public render, public input
   {
   private:
-    std::vector<boost::shared_ptr<world>> Worlds;  // Worlds
-    navigation Navigation;                         // Navigation elements
+    std::vector<world> Worlds;  // Worlds
+    navigation Navigation;      // Navigation elements
 
   public:
     /* Class constructor */

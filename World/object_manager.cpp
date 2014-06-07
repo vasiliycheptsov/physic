@@ -25,10 +25,10 @@ VOID physic::object_manager::DeleteSelectObject( INT Index )
 VOID physic::object_manager::ClearObjectCollection( VOID )
 {
   ObjectCollection.clear();
-} /* End of 'physic::object_manager::Delete
+} /* End of 'physic::object_manager::Delete' function */
 
 /* Get number of objects in object collection function */
-INT physic::object_manager::Size( VOID )
+UINT physic::object_manager::Size( VOID )
 {
   return ObjectCollection.size();
 } /* End of 'physic::object_manager::GetNoofObjects' function */
@@ -36,7 +36,7 @@ INT physic::object_manager::Size( VOID )
 /* Operator '[]' - get object by index function */
 physic::object & physic::object_manager::operator[]( INT Index )
 {
-  return *ObjectCollection[Index].get();
+  return *(ObjectCollection[Index].get());
 } /* End of 'physic::object_manager::GetObject' function */
 
 /* END OF 'object_manager.cpp' FILE */

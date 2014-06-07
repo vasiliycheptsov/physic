@@ -28,7 +28,7 @@ namespace physic
     VOID ClearObjectCollection( VOID );
 
     /* Get number of objects in object collection function */
-    INT Size( VOID );
+    UINT Size( VOID );
 
     /* Operator '[]' - get object by index function */
     object & operator[]( INT Index );

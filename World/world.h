@@ -9,11 +9,17 @@
 namespace physic
 {
   /* World class */
-  class world : public object_manager, public world_visual, public world_model
+  class world : public world_visual, public world_model
   {
+  private:
+    object_manager ObjectCollection;  // Object Collection
+
   public:
     /* Class constructor function */
     world( VOID );
+
+    /* Opeartor '<<' - add new object function */
+    world & operator<<( object &NewObject );
   }; /* End of 'physic::world' class */
 } /* end of 'physic' namespace */
 

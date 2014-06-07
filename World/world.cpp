@@ -5,8 +5,15 @@
 /* Class constructor function */
 physic::world::world( VOID )
 {
-  world_visual::Init(dynamic_cast<object_manager *>(this));
-  world_model::Init(dynamic_cast<object_manager *>(this));
+  world_visual::Init(&ObjectCollection);
+  world_model::Init(&ObjectCollection);
 } /* End of 'physic::world::world' function */
+
+/* Opeartor '<<' - add new object function */
+physic::world & physic::world::operator<<( physic::object &NewObject )
+{
+  ObjectCollection << NewObject;
+  return *this;
+} /* End of 'physic::world::operator<<' function */
 
 /* END OF 'world.cpp' FILE */
