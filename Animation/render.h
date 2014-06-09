@@ -3,14 +3,6 @@
 #ifndef __RENDER_H_
 #define __RENDER_H_
 
-#include <glew.h>
-#include <gl/gl.h>
-#include <gl/glu.h>
-
-#pragma comment(lib, "opengl32")
-#pragma comment(lib, "glu32")
-#pragma comment(lib, "glew32")
-
 #include "../physicdef.h"
 
 /* Project namespace */

@@ -16,6 +16,32 @@ namespace physic
     vec Velocity;  // Object velocity
     DBL Mass;      // Object mass
 
+    /* Object ID enumeration type */
+    enum OBJECTID
+    {
+      CIRCLE, PLANE
+    }; /* End of 'physic::object_parameters::OBJECTID' enum */
+
+    /* Geometric object parameters */
+    union
+    {
+      /* Circle geometric parameters */
+      struct
+      {
+        vec Center;  // Circle center
+        FLT Radius;  // Circle radius
+      };
+
+      /* Plane geometric parameters */
+      struct
+      {
+        vec LBVertex;  // Left-bottom vertex
+        FLT
+          Height,      // Height
+          Width;       // Width
+      };
+    }; /* End of 'physic::object_parameters::' union */
+
     /* Default class construtor */
     object_parameters( VOID ) : Position(vec(0, 0, 0)), Velocity(vec(0, 0, 0)), Mass(1)
     {

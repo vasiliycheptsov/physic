@@ -17,7 +17,11 @@ VOID physic::world_visual::Init( physic::object_manager *NewObjectCollection )
 VOID physic::world_visual::Render( physic::anim *Ani )
 {
   for (INT i = 0; i < ObjectCollection->Size(); i++)
+  {
+    glPushAttrib(GL_ALL_ATTRIB_BITS);
     (*ObjectCollection)[i].Render();
+    glPopAttrib();
+  }
 } /* End of 'physic::world_visual::Render' function */
 
 /* END OF 'world_visual.cpp' FILE */

@@ -18,11 +18,10 @@
 INT WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
                     CHAR *CmdStr, INT CmdShow )
 {
+  physic::profiler MainProfiler("Main program profiler");
   physic::anim MyAnim;
-
-  MyAnim << physic::world();
-  MyAnim.AddObject(physic::object(physic::object_parameters()), 0);
-
+  MyAnim << physic::object(physic::object_parameters());
+  physic::profiler Run("Run program profiler");
   MyAnim.Run();
   return 30;
 } /* End of 'WinMain' function */

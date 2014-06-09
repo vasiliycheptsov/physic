@@ -42,14 +42,19 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				FavorSizeOrSpeed="1"
 				AdditionalIncludeDirectories="X:\TGRKIT\INCLUDE;$(CG_INC_PATH);$(DXSDK_DIR)\Include;"
 				PreprocessorDefinitions="WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG"
-				MinimalRebuild="true"
+				MinimalRebuild="false"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
-				UsePrecompiledHeader="0"
+				EnableEnhancedInstructionSet="1"
+				FloatingPointModel="0"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="extrasdef.h"
 				WarningLevel="3"
 				DebugInformationFormat="4"
+				ForcedIncludeFiles="extrasdef.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -119,13 +124,19 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
 				AdditionalIncludeDirectories="X:\TGRKIT\INCLUDE;$(CG_INC_PATH);$(DXSDK_DIR)\Include;"
 				PreprocessorDefinitions="WIN32;_CRT_SECURE_NO_WARNINGS"
+				MinimalRebuild="false"
 				RuntimeLibrary="1"
 				EnableFunctionLevelLinking="true"
-				UsePrecompiledHeader="0"
+				EnableEnhancedInstructionSet="1"
+				FloatingPointModel="0"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="extrasdef.h"
 				WarningLevel="3"
 				DebugInformationFormat="3"
+				ForcedIncludeFiles="extrasdef.h"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -201,6 +212,26 @@
 			<File
 				RelativePath=".\physicdef.h"
 				>
+			</File>
+			<File
+				RelativePath=".\precompiled.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\stock.h"
@@ -395,6 +426,10 @@
 				</File>
 				<File
 					RelativePath=".\Object\object_parameters.h"
+					>
+				</File>
+				<File
+					RelativePath=".\Object\object_visual.cpp"
 					>
 				</File>
 				<File

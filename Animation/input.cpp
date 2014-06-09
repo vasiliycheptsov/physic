@@ -4,9 +4,6 @@
 
 #include "../physic.h"
 
-#include <mmsystem.h>
-#pragma comment(lib, "winmm")
-
 /* Mouse wheel value */
 static INT MouseWheelOld;
 

@@ -6,14 +6,6 @@
 /* Utils includes */
 #include "utils/profiler.h"
 
-/* Animation includes */
-#include "animation/window.h"
-#include "animation/timer.h"
-#include "animation/render.h"
-#include "animation/input.h"
-#include "animation/navigation.h"
-#include "animation/animation.h"
-
 /* Object includes */
 #include "object/object_parameters.h"
 #include "object/object_collision.h"
@@ -29,6 +21,14 @@
 #include "world/world_model.h"
 #include "world/world_visual.h"
 #include "world/world.h"
+
+/* Animation includes */
+#include "animation/window.h"
+#include "animation/timer.h"
+#include "animation/render.h"
+#include "animation/input.h"
+#include "animation/navigation.h"
+#include "animation/animation.h"
 
 #endif /* __PHYSIC_H_ */
 

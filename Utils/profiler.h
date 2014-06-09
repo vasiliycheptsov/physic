@@ -42,7 +42,7 @@ namespace physic
 
       if (F != NULL)
       {
-        fprintf(F, "profiler <%s>: Start: %lf, Finish: %lf, Delta: %lf",
+        fprintf(F, "profiler <%s>: Start: %lf, Finish: %lf, Delta: %lf\n",
                 Name, Convert(StartTime), Convert(FinishTime), Convert(DeltaTime));
         fclose(F);
       }

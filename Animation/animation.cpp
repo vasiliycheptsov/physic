@@ -43,12 +43,7 @@ VOID physic::anim::Paint( HDC hDC )
   glPushAttrib(GL_ALL_ATTRIB_BITS);
   Navigation.Render(this);
   glPopAttrib();
-  for (INT i = 0; i < Worlds.size(); i++)
-  {
-    glPushAttrib(GL_ALL_ATTRIB_BITS);
-    Worlds[i].Render(this);
-    glPopAttrib();
-  }
+  World.Render(this);
   EndFrame();
   CopyFrame();
   IncrFrameCount();
@@ -92,18 +87,10 @@ VOID physic::anim::Timer( VOID )
  * RETURNS:
  *   (anim &) self reference.
  */
-physic::anim & physic::anim::operator<<( physic::world &NewWorld )
+physic::anim & physic::anim::operator<<( physic::object &NewObject )
 {
-  Worlds.push_back(NewWorld);
+  World << NewObject;
   return *this;
 } /* End of 'physic::anim::operator<<' function */
-
-/* Add new object to current world function */
-physic::anim & physic::anim::AddObject( physic::object &NewObject, INT WorldIndex )
-{
-  if (WorldIndex >= 0 && WorldIndex < Worlds.size())
-    Worlds[WorldIndex] << NewObject;
-  return *this;
-} /* End of 'physic::anim::AddObject' function */
 
 /* END OF 'animation.cpp' FILE */

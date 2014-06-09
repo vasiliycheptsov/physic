@@ -16,26 +16,13 @@ namespace physic
 
   public:
     /* Class constructor function */
-    object_visual( VOID ) : ObjectParam(NULL)
-    {
-    } /* End of 'physic::object_visual::object_visual' function */
+    object_visual( VOID );
 
     /* Class init function */
-    VOID Init( object_parameters *NewObjectParam )
-    {
-      ObjectParam = NewObjectParam;
-    } /* End of 'physic::object_visual::Init' function */
+    VOID Init( object_parameters *NewObjectParam );
 
     /* Render object function */
-    VOID Render( VOID )
-    {
-      glBegin(GL_TRIANGLES);
-        glColor3f(1, 0, 1);
-        glVertex2f(0, 0);
-        glVertex2f(1, 0);
-        glVertex2f(0, 1);
-      glEnd();
-    } /* End of 'physic::object_visual::Render' function */
+    VOID Render( VOID );
   }; /* End of 'physic::object_visual' class */
 } /* end of 'physic' namespace */
 

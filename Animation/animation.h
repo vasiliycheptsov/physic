@@ -14,8 +14,8 @@ namespace physic
   class anim : public win, public render, public input
   {
   private:
-    std::vector<world> Worlds;  // Worlds
-    navigation Navigation;      // Navigation elements
+    world World;            // World
+    navigation Navigation;  // Navigation elements
 
   public:
     /* Class constructor */
@@ -36,10 +36,7 @@ namespace physic
     VOID Timer( VOID );
 
     /* Operator '<<' - add new world to animation stock function */
-    anim & operator<<( world &NewWorld );
-
-    /* Add new object to current world function */
-    anim & AddObject( object &NewObject, INT WorldIndex );
+    anim & operator<<( object &NewObject );
   }; /* End of 'anim' class */
 } /* end of 'physic' namespace */
 

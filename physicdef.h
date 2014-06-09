@@ -3,8 +3,6 @@
 #ifndef __PHYSICDEF_H_
 #define __PHYSICDEF_H_
 
-#include "extrasdef.h"
-
 /* Debug memory allocation support */
 #ifdef _DEBUG
 #  define _CRTDBG_MAP_ALLOC
@@ -38,6 +36,12 @@ typedef float FLT;
 #include "tsg/tsg.h"
 #include "stock.h"
 
+#pragma comment(lib, "winmm")
+
+#pragma comment(lib, "opengl32")
+#pragma comment(lib, "glu32")
+#pragma comment(lib, "glew32")
+
 /* Project namespace */
 namespace physic
 {
@@ -46,14 +50,6 @@ namespace physic
 
   /* Forward utils references */
   class profiler;
-
-  /* Forward animation references */
-  class win;
-  class timer;
-  class input;
-  class render;
-  class navigation;
-  class anim;
 
   /* Forward object references */
   class object_parameters;
@@ -70,6 +66,14 @@ namespace physic
   class world_collision;
   class world_model;
   class world;
+
+  /* Forward animation references */
+  class win;
+  class timer;
+  class input;
+  class render;
+  class navigation;
+  class anim;
 } /* end of 'physic' namespace */
 
 #endif /* __PHYSICDEF_H_ */

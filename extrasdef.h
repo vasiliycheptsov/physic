@@ -15,6 +15,11 @@
 
 #include <assert.h>
 #include <commondf.h>
+#include <mmsystem.h>
+
+#include <glew.h>
+#include <gl/gl.h>
+#include <gl/glu.h>
 
 #endif /* __EXTRASDEF_H_ */
 
