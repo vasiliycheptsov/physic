@@ -20,6 +20,7 @@
 #include <glew.h>
 #include <gl/gl.h>
 #include <gl/glu.h>
+#include <glut.h>
 
 #endif /* __EXTRASDEF_H_ */
 

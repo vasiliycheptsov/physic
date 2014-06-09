@@ -16,12 +16,14 @@ VOID physic::object_visual::Init( physic::object_parameters *NewObjectParam )
 /* Render object function */
 VOID physic::object_visual::Render( VOID )
 {
-  glBegin(GL_TRIANGLES);
-    glColor3f(1, 0, 1);
-    glVertex2f(0, 0);
-    glVertex2f(1, 0);
-    glVertex2f(0, 1);
-  glEnd();
+  switch (ObjectParam->Id)
+  {
+  case object_parameters::PLANE:
+    glRectf(ObjectParam->LBVertex.X, ObjectParam->LBVertex.Y,
+            ObjectParam->LBVertex.X + ObjectParam->Width,
+            ObjectParam->LBVertex.Y + ObjectParam->Height);
+    break;
+  }
 } /* End of 'physic::object_visual::Render' function */
 
 /* END OF 'object_visual.cpp' FILE */

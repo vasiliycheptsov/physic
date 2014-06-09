@@ -20,7 +20,7 @@ namespace physic
     enum OBJECTID
     {
       CIRCLE, PLANE
-    }; /* End of 'physic::object_parameters::OBJECTID' enum */
+    } Id; /* End of 'physic::object_parameters::OBJECTID' enum */
 
     /* Geometric object parameters */
     union
