@@ -19,7 +19,7 @@ VOID physic::world_visual::Render( physic::anim *Ani )
   for (INT i = 0; i < ObjectCollection->Size(); i++)
   {
     glPushAttrib(GL_ALL_ATTRIB_BITS);
-    (*ObjectCollection)[i].Render();
+    (*ObjectCollection)[i]->Render(Ani);
     glPopAttrib();
   }
 } /* End of 'physic::world_visual::Render' function */

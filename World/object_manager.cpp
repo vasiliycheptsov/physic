@@ -9,9 +9,9 @@ physic::object_manager::~object_manager( VOID )
 } /* End of 'physic::object_manager::~object_manager' function */
 
 /* Operator '<<' - add new object function */
-physic::object_manager physic::object_manager::operator<<( physic::object &Obj )
+physic::object_manager physic::object_manager::operator<<( boost::shared_ptr<physic::object> &Obj )
 {
-  ObjectCollection.push_back(boost::make_shared<object>(Obj));
+  ObjectCollection.push_back(Obj);
   return *this;
 } /* End of 'physic::object_manager::AddObject' function */
 
@@ -34,9 +34,9 @@ UINT physic::object_manager::Size( VOID )
 } /* End of 'physic::object_manager::GetNoofObjects' function */
 
 /* Operator '[]' - get object by index function */
-physic::object & physic::object_manager::operator[]( INT Index )
+boost::shared_ptr<physic::object> & physic::object_manager::operator[]( INT Index )
 {
-  return *(ObjectCollection[Index].get());
+  return ObjectCollection[Index];
 } /* End of 'physic::object_manager::GetObject' function */
 
 /* END OF 'object_manager.cpp' FILE */

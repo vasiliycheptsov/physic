@@ -13,6 +13,7 @@
 #include "object/object_model.h"
 #include "object/object_visual.h"
 #include "object/object.h"
+#include "object/currentobjects/circle.h"
 
 /* World includes */
 #include "world/object_manager.h"

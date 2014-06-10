@@ -19,7 +19,7 @@ namespace physic
     ~object_manager( VOID );
 
     /* Operator '<<' - add new object function */
-    object_manager operator<<( object &Obj );
+    object_manager operator<<( boost::shared_ptr<object> &Obj );
 
     /* Delete object by index function */
     VOID DeleteSelectObject( INT Index );
@@ -31,7 +31,7 @@ namespace physic
     UINT Size( VOID );
 
     /* Operator '[]' - get object by index function */
-    object & operator[]( INT Index );
+    boost::shared_ptr<object> & operator[]( INT Index );
   }; /* End of 'physic::object_manager' class */
 } /* end of 'physic' namespace */
 

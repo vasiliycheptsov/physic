@@ -20,7 +20,12 @@ INT WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 {
   physic::profiler MainProfiler("Main program profiler");
   physic::anim MyAnim;
-  MyAnim << physic::object(physic::object_parameters());
+  MyAnim << boost::make_shared<physic::object>(physic::object(physic::object_parameters()));
+  /*
+  MyAnim << boost::make_shared<physic::object>(
+    boost::dynamic_pointer_cast<physic::object>(
+      boost::make_shared<physic::circle>(physic::circle(physic::object_parameters()))));
+  */
   physic::profiler Run("Run program profiler");
   MyAnim.Run();
   return 30;

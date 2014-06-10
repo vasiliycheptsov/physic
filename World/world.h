@@ -19,7 +19,7 @@ namespace physic
     world( VOID );
 
     /* Opeartor '<<' - add new object function */
-    world & operator<<( object &NewObject );
+    world & operator<<( boost::shared_ptr<object> &NewObject );
   }; /* End of 'physic::world' class */
 } /* end of 'physic' namespace */
 

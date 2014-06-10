@@ -221,6 +221,10 @@
 					/>
 				</FileConfiguration>
 			</File>
+			<File
+				RelativePath=".\stock.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
@@ -233,10 +237,6 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
-			<File
-				RelativePath=".\stock.h"
-				>
-			</File>
 			<Filter
 				Name="Animation"
 				>
@@ -270,6 +270,10 @@
 				</File>
 				<File
 					RelativePath=".\Animation\render.h"
+					>
+				</File>
+				<File
+					RelativePath=".\Animation\timer.cpp"
 					>
 				</File>
 				<File
@@ -425,6 +429,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\Object\object_parameters.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\Object\object_parameters.h"
 					>
 				</File>
@@ -439,6 +447,14 @@
 				<Filter
 					Name="CurrentObjects"
 					>
+					<File
+						RelativePath=".\Object\CurrentObjects\circle.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Object\CurrentObjects\circle.h"
+						>
+					</File>
 				</Filter>
 			</Filter>
 			<Filter

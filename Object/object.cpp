@@ -2,6 +2,12 @@
 
 #include "../physic.h"
 
+/* Default class constructor */
+physic::object::object( VOID )
+{
+} /* End of 'physic::object::object' function */
+
+/* Class onstructor function */
 physic::object::object( physic::object_parameters &NewObjectParam )
 {
   *dynamic_cast<object_parameters *>(this) = NewObjectParam;

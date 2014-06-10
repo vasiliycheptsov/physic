@@ -22,6 +22,9 @@
 #include <gl/glu.h>
 #include <glut.h>
 
+#include "tsg/tsg.h"
+#include "stock.h"
+
 #endif /* __EXTRASDEF_H_ */
 
 /* END OF 'extrasdef.h' FILE */

@@ -87,7 +87,7 @@ VOID physic::anim::Timer( VOID )
  * RETURNS:
  *   (anim &) self reference.
  */
-physic::anim & physic::anim::operator<<( physic::object &NewObject )
+physic::anim & physic::anim::operator<<( boost::shared_ptr<physic::object> &NewObject )
 {
   World << NewObject;
   return *this;

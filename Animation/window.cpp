@@ -118,7 +118,7 @@ BOOL physic::win::SetFullScreen( BOOL FullScreenFlag )
   {
     /* Restore window size and position */
     IsFullScreen = FALSE;
-    SetWindowPos(hWnd, HWND_TOP, 
+    SetWindowPos(hWnd, HWND_TOP,
       SaveRC.left, SaveRC.top,
       SaveRC.right - SaveRC.left, SaveRC.bottom - SaveRC.top,
       SWP_NOOWNERZORDER);
@@ -128,6 +128,16 @@ BOOL physic::win::SetFullScreen( BOOL FullScreenFlag )
     MAKELONG(rc.right, rc.bottom));
   return !IsFullScreen;
 } /* End of 'physic::win::SetFullScreen' function */
+
+/* Change fullscreen mode function */
+BOOL physic::win::ChangeFullScreen( VOID )
+{
+  if (IsFullScreen)
+    SetFullScreen(FALSE);
+  else
+    SetFullScreen(TRUE);
+  return IsFullScreen;
+} /* End of 'physic::win::ChangeFullScreen' function */
 
 /* Window message handle function.
  * ARGUMENTS:

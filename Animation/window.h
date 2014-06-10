@@ -40,6 +40,9 @@ namespace physic
     /* Goto fullscreen mode function */
     BOOL SetFullScreen( BOOL IsFullScreen );
 
+    /* Change fullscreen mode function */
+    BOOL ChangeFullScreen( VOID );
+
     /* Get full screen state function.
      * ARGUMENTS: None.
      * RETURNS:

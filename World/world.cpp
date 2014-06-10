@@ -10,7 +10,7 @@ physic::world::world( VOID )
 } /* End of 'physic::world::world' function */
 
 /* Opeartor '<<' - add new object function */
-physic::world & physic::world::operator<<( physic::object &NewObject )
+physic::world & physic::world::operator<<( boost::shared_ptr<physic::object> &NewObject )
 {
   ObjectCollection << NewObject;
   return *this;

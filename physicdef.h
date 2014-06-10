@@ -33,9 +33,6 @@ typedef unsigned __int64 UINT64;
 typedef double DBL;
 typedef float FLT;
 
-#include "tsg/tsg.h"
-#include "stock.h"
-
 #pragma comment(lib, "winmm")
 
 #pragma comment(lib, "opengl32")
@@ -47,6 +44,7 @@ namespace physic
 {
   /* TSG base types */
   typedef tsg::TVec<FLT> vec;
+  typedef tsg::TColor<FLT> color;
 
   /* Forward utils references */
   class profiler;
@@ -58,6 +56,7 @@ namespace physic
   class object_collision;
   class object_model;
   class object;
+  class circle;
 
   /* Forward world references */
   class object_manager;

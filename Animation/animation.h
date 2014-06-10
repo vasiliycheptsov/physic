@@ -36,7 +36,7 @@ namespace physic
     VOID Timer( VOID );
 
     /* Operator '<<' - add new world to animation stock function */
-    anim & operator<<( object &NewObject );
+    anim & operator<<( boost::shared_ptr<object> &NewObject );
   }; /* End of 'anim' class */
 } /* end of 'physic' namespace */
 

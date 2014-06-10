@@ -30,7 +30,7 @@ physic::render::render( HWND &hWndRender ) :
   wglMakeCurrent(hDC, hRC);
 
   /* Set default OpenGL parameters */
-  glClearColor(0.3, 0.5, 0.7, 1);
+  glClearColor(0, 0, 0, 1);
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 

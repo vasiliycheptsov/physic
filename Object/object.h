@@ -11,6 +11,10 @@ namespace physic
   /* Object class */
   class object : public object_parameters, public object_visual, public object_model
   {
+  protected:
+    /* Default class constructor */
+    object( VOID );
+
   public:
     /* Class constructor function */
     object( object_parameters &NewObjectParam );
