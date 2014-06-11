@@ -15,10 +15,10 @@ namespace physic
 
   public:
     /* Class constructor function */
-    circle( object_parameters &NewObjectParam );
+    circle( object_parameters NewObjectParam, FLT NewRadius );
 
     /* Render circle function */
-    VOID Render( VOID );
+    VOID Render( anim *Ani );
   }; /* End of 'physic::circle' class */
 } /* end of 'physic' namespace */
 

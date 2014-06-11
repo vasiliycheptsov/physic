@@ -22,7 +22,7 @@ namespace physic
     VOID Init( object_parameters *NewObjectParam );
 
     /* Render object function */
-    VOID Render( anim *Ani );
+    virtual VOID Render( anim *Ani );
   }; /* End of 'physic::object_visual' class */
 } /* end of 'physic' namespace */
 

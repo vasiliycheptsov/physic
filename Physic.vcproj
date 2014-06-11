@@ -455,6 +455,14 @@
 						RelativePath=".\Object\CurrentObjects\circle.h"
 						>
 					</File>
+					<File
+						RelativePath=".\Object\CurrentObjects\plane.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Object\CurrentObjects\plane.h"
+						>
+					</File>
 				</Filter>
 			</Filter>
 			<Filter

@@ -57,6 +57,7 @@ namespace physic
   class object_model;
   class object;
   class circle;
+  class plane;
 
   /* Forward world references */
   class object_manager;

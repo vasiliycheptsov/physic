@@ -4,7 +4,7 @@
 
 /* Default class construtor function */
 physic::object_parameters::object_parameters( VOID ) :
- Position(vec(0, 0, 0)), Velocity(vec(0, 0, 0)), Mass(1)
+ Position(vec(0, 0, 0)), Velocity(vec(0, 0, 0)), Mass(1), Color(1, 1, 1, 1)
 {
 } /* End of 'physic::object_parameters::object_parameters' function */
 
