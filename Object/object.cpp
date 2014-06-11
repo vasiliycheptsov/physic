@@ -5,6 +5,8 @@
 /* Default class constructor */
 physic::object::object( VOID )
 {
+  object_visual::Init(dynamic_cast<object_parameters *>(this));
+  object_model::Init(dynamic_cast<object_parameters *>(this));
 } /* End of 'physic::object::object' function */
 
 /* Class onstructor function */
