@@ -9,7 +9,8 @@
  */
 physic::anim::anim( VOID ) :
   render(const_cast<HWND &>(win::hWnd)),
-  input(const_cast<HWND &>(win::hWnd))
+  input(const_cast<HWND &>(win::hWnd)),
+  World(this)
 {
 } /* End of 'physic::anim::anim' constructor */
 
@@ -43,6 +44,7 @@ VOID physic::anim::Paint( HDC hDC )
   glPushAttrib(GL_ALL_ATTRIB_BITS);
   Navigation.Render(this);
   glPopAttrib();
+  World.ModelUpdate(this);
   World.Render(this);
   EndFrame();
   CopyFrame();

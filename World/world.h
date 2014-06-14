@@ -13,7 +13,7 @@ namespace physic
   {
   public:
     /* Class constructor function */
-    world( VOID );
+    world( anim *Ani );
   }; /* End of 'physic::world' class */
 } /* end of 'physic' namespace */
 

@@ -24,6 +24,7 @@ INT WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
   MyAnim << boost::make_shared<physic::object>(physic::object(Params));
   MyAnim << boost::dynamic_pointer_cast<physic::object>(boost::make_shared<physic::circle>(Params, (FLT)1));
   Params.Color = physic::color(1, 1, 0, 1);
+  Params.Velocity = physic::vec(-0.01, -0.01, 0);
   MyAnim << boost::dynamic_pointer_cast<physic::object>(boost::make_shared<physic::plane>(Params, (FLT)1, (FLT)1));
   physic::profiler Run("Run program profiler");
   MyAnim.Run();

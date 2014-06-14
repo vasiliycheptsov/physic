@@ -11,13 +11,17 @@ namespace physic
   {
   private:
     object_manager *ObjectCollection;  // Object collection
+    DBL LastTime;                      // Last count time
 
   public:
     /* Class constructor function */
     world_model( VOID );
 
     /* Class init functiob */
-    VOID Init( object_manager *NewObjectCollection );
+    VOID Init( object_manager *NewObjectCollection, anim *Ani );
+
+    /* Model update function */
+    VOID ModelUpdate( anim *Ani );
   };
 }
 
