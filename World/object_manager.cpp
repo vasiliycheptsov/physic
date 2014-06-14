@@ -13,7 +13,7 @@ physic::object_manager physic::object_manager::operator<<( boost::shared_ptr<phy
 {
   ObjectCollection.push_back(Obj);
   return *this;
-} /* End of 'physic::object_manager::AddObject' function */
+} /* End of 'physic::object_manager::operator<<' function */
 
 /* Delete object by index function */
 VOID physic::object_manager::DeleteSelectObject( INT Index )
