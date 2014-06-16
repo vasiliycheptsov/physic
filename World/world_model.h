@@ -13,12 +13,13 @@ namespace physic
     object_manager *ObjectCollection;  // Object collection
     DBL LastTime;                      // Last count time
 
+  protected:
+    /* Class init functiob */
+    VOID Init( object_manager *NewObjectCollection, anim *Ani );
+
   public:
     /* Class constructor function */
     world_model( VOID );
-
-    /* Class init functiob */
-    VOID Init( object_manager *NewObjectCollection, anim *Ani );
 
     /* Model update function */
     VOID ModelUpdate( anim *Ani );

@@ -13,12 +13,13 @@ namespace physic
   private:
     object_parameters *ObjectParam;  // Object parameters
 
+  protected:
+    /* Class init function */
+    VOID Init( object_parameters *NewObjectParam );
+
   public:
     /* Class constructor function */
     object_model( VOID );
-
-    /* Class init function */
-    VOID Init( object_parameters *NewObjectParam );
 
     /* Kinematic update function */
     VOID ModelUpdate( DBL DeltaTime );

@@ -14,12 +14,13 @@ namespace physic
   private:
     object_parameters *ObjectParam;  // Object parameters
 
+  protected:
+    /* Class init function */
+    VOID Init( object_parameters *NewObjectParams );
+
   public:
     /* Class constructor function */
     object_collision( VOID );
-
-    /* Class init function */
-    VOID Init( object_parameters *NewObjectParams );
   };
 } /* end of 'physic' namespace */
 

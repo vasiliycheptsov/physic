@@ -33,8 +33,9 @@ typedef unsigned __int64 UINT64;
 typedef double DBL;
 typedef float FLT;
 
-#pragma comment(lib, "winmm")
+#pragma warning(disable: 4355)
 
+#pragma comment(lib, "winmm")
 #pragma comment(lib, "opengl32")
 #pragma comment(lib, "glu32")
 #pragma comment(lib, "glew32")

@@ -14,12 +14,13 @@ namespace physic
   private:
     object_parameters *ObjectParam;  // Pointer to object parameters
 
+  protected:
+    /* Class init function */
+    VOID Init( object_parameters *NewObjectParam );
+
   public:
     /* Class constructor function */
     object_visual( VOID );
-
-    /* Class init function */
-    VOID Init( object_parameters *NewObjectParam );
 
     /* Render object function */
     virtual VOID Render( anim *Ani );

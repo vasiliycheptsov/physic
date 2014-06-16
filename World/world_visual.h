@@ -12,12 +12,13 @@ namespace physic
   private:
     object_manager *ObjectCollection;  // Object collection
 
+  protected:
+    /* Class init function */
+    VOID Init( object_manager *NewObjectCollection );
+
   public:
     /* Class constructor function */
     world_visual( VOID );
-
-    /* Class init function */
-    VOID Init( object_manager *NewObjectCollection );
 
     /* Render all world objects function */
     VOID Render( anim *Ani );
