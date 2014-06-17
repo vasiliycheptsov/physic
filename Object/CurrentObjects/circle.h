@@ -10,10 +10,9 @@ namespace physic
 {
   class circle : public object
   {
-  private:
+  public:
     FLT Radius;  // Circle radius
 
-  public:
     /* Class constructor function */
     circle( object_parameters NewObjectParam, FLT NewRadius );
 

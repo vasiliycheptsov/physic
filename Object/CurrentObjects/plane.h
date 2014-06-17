@@ -11,12 +11,11 @@ namespace physic
   /* Plane object class */
   class plane : public object
   {
-  private:
+  public:
     FLT
       Width,   // Plane width
       Height;  // Plane height
 
-  public:
     /* Class constructor function */
     plane( object_parameters NewObjectParam, FLT NewWidth, FLT NewHeight );
 

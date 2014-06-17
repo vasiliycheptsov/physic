@@ -22,8 +22,9 @@ VOID physic::world_model::Init( physic::object_manager *NewObjectCollection,
 VOID physic::world_model::ModelUpdate( anim *Ani )
 {
   DBL NowTime = Ani->Time;
-  for (INT i = 0; i < ObjectCollection->Size(); i++)
-    (*ObjectCollection)[i]->ModelUpdate(NowTime - LastTime);
+  if (ObjectCollection != NULL)
+    for (INT i = 0; i < ObjectCollection->Size(); i++)
+      (*ObjectCollection)[i]->ModelUpdate(NowTime - LastTime);
   LastTime = NowTime;
 } /* End of 'physic::world_model::ModelUpdate' function */
 

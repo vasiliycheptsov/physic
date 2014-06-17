@@ -23,7 +23,11 @@ namespace physic
     object_dynamic( VOID );
 
     /* Dynamic update function */
-    VOID DynamicUpdate( DBL DeltaTime );
+    VOID DynamicUpdate( vec &ResultImpuls );
+
+    /* Count impuls function */
+    static vec CountImpuls( collision_info &Info, object_parameters *Param1,
+                            object_parameters *Param2, BOOL IsCountForFirst );
   };
 } /* end of 'physic' namespace */
 

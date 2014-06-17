@@ -5,7 +5,7 @@
 /* Class constructor function */
 physic::object_model::object_model( VOID ) : ObjectParam(NULL)
 {
-} /* End of 'physic::opbject_model::object_model' function */
+} /* End of 'physic::object_model::object_model' function */
 
 /* Class init function */
 VOID physic::object_model::Init( physic::object_parameters *NewObjectParam )

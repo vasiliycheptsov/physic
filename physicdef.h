@@ -51,6 +51,7 @@ namespace physic
   class profiler;
 
   /* Forward object references */
+  class collision_info;
   class object_parameters;
   class onject_visual;
   class object_dynamic;
