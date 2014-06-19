@@ -77,6 +77,14 @@ BOOL physic::timer::SetPause( BOOL IsToBePause )
   return IsPause = IsToBePause;
 } /* End of 'physic::timer::SetPause' function */
 
+/* Change pause state function */
+VOID physic::timer::ChangePause( VOID )
+{
+  static BOOL LastState = FALSE;
+  LastState = !LastState;
+  IsPause = LastState;
+} /* End of 'physic::timer::ChangePause' function */
+
 /* Add time shift function.
  * ARGUMENTS:
  *   - time shift in seconds to be add:

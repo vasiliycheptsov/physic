@@ -14,10 +14,13 @@ namespace physic
   public:
     BOOL IsIntersected;  // Is objects intersected flag
     vec
-      Normal;            // Collision normal
+      Normal,            // Collision normal
       Point1,            // First collision point
       Point2;            // Second collision point
     FLT Depth;           // Depth value
+    INT
+      Index1,            // First object index
+      Index2;            // Second object index
 
     /* Class constructor function */
     collision_info( BOOL NewIsIntersected );
@@ -29,6 +32,14 @@ namespace physic
   private:
     object_parameters *ObjectParam;  // Object parameters
 
+  protected:
+    /* Class init function */
+    VOID Init( object_parameters *NewObjectParams );
+
+  public:
+    /* Class constructor function */
+    object_collision( VOID );
+
     /* Get circle with circle intersection function */
     static collision_info CircleWithCircle( circle &Circle1, circle &Circle2 );
 
@@ -39,14 +50,6 @@ namespace physic
     /* Get circle with circle intersection function */
     static collision_info PlaneWithPlane( plane &Plane1, plane &Plane2 );
 #endif /* 0 */
-
-  protected:
-    /* Class init function */
-    VOID Init( object_parameters *NewObjectParams );
-
-  public:
-    /* Class constructor function */
-    object_collision( VOID );
   };
 } /* end of 'physic' namespace */
 

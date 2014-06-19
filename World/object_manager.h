@@ -28,7 +28,7 @@ namespace physic
     VOID ClearObjectCollection( VOID );
 
     /* Get number of objects in object collection function */
-    UINT Size( VOID );
+    INT Size( VOID );
 
     /* Operator '[]' - get object by index function */
     boost::shared_ptr<object> & operator[]( INT Index );

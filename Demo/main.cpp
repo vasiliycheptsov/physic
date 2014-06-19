@@ -22,16 +22,28 @@ INT WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
   physic::anim MyAnim;
 
   physic::object_parameters Params2;
-  Params2.Position = physic::vec(1, 1, 0);
+  Params2.Position = physic::vec(1, 0, 0);
   Params2.Color = physic::color(0, 1, 1, 0);
-  Params2.Velocity = physic::vec(0.089, 0, 0);
-  MyAnim << boost::dynamic_pointer_cast<physic::object>(boost::make_shared<physic::circle>(Params2, (FLT)1));
+  Params2.Velocity = physic::vec(-0.1, 0, 0);
+  MyAnim << boost::dynamic_pointer_cast<physic::object>(boost::make_shared<physic::circle>(Params2, (FLT)0.3));
 
   physic::object_parameters Params3;
-  Params3.Position = physic::vec(-1, -1, 0);
+  Params3.Position = physic::vec(-1, 0, 0);
   Params3.Color = physic::color(1, 1, 0, 1);
-  Params3.Velocity = physic::vec(-0.1, -0.1, 0);
-  MyAnim << boost::dynamic_pointer_cast<physic::object>(boost::make_shared<physic::plane>(Params3, (FLT)2, (FLT)1));
+  Params3.Velocity = physic::vec(0.1, 0, 0);
+  MyAnim << boost::dynamic_pointer_cast<physic::object>(boost::make_shared<physic::circle>(Params3, (FLT)0.3));
+
+  physic::object_parameters Params4;
+  Params4.Position = physic::vec(0, 1, 0);
+  Params4.Color = physic::color(0, 1, 0, 0);
+  Params4.Velocity = physic::vec(0, -0.15, 0);
+  MyAnim << boost::dynamic_pointer_cast<physic::object>(boost::make_shared<physic::circle>(Params4, (FLT)0.3));
+
+  physic::object_parameters Params5;
+  Params5.Position = physic::vec(0, -1, 0);
+  Params5.Color = physic::color(1, 0, 0, 0);
+  Params5.Velocity = physic::vec(0, 0.05, 0);
+  MyAnim << boost::dynamic_pointer_cast<physic::object>(boost::make_shared<physic::circle>(Params5, (FLT)0.3));
 
   physic::profiler Run("Run program profiler");
   MyAnim.Run();

@@ -28,9 +28,9 @@ VOID physic::object_manager::ClearObjectCollection( VOID )
 } /* End of 'physic::object_manager::Delete' function */
 
 /* Get number of objects in object collection function */
-UINT physic::object_manager::Size( VOID )
+INT physic::object_manager::Size( VOID )
 {
-  return ObjectCollection.size();
+  return (INT)ObjectCollection.size();
 } /* End of 'physic::object_manager::GetNoofObjects' function */
 
 /* Operator '[]' - get object by index function */

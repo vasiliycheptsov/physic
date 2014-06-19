@@ -29,7 +29,7 @@ physic::vec physic::object_dynamic::CountImpuls( physic::collision_info &Info,
                                                  BOOL IsCountForFirst )
 {
   DBL Res = max(0, (-(Param2->Velocity - Param1->Velocity) & Info.Normal) /
-                                  (1.0 / Param1->Mass + 1.0 / Param2->Mass));
+                   (1.0 / Param1->Mass + 1.0 / Param2->Mass));
   if (IsCountForFirst)
     return Info.Normal * Res;
   return Info.Normal * (-Res);

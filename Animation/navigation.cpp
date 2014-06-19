@@ -24,6 +24,10 @@ VOID physic::navigation::Response( physic::anim *Ani )
       ((Ani->Keys['F'] && !Ani->KeysOld['F']) ||
        (Ani->Keys['f'] && !Ani->KeysOld['f'])))
     Ani->ChangeFullScreen();
+  if (Ani->Keys[VK_CONTROL] &&
+      ((Ani->Keys['P'] && !Ani->KeysOld['P']) ||
+       (Ani->Keys['p'] && !Ani->KeysOld['p'])))
+       Ani->ChangePause();
   if (Ani->Keys[VK_UP])
     ShiftY--;
   if (Ani->Keys[VK_DOWN])

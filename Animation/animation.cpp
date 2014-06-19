@@ -80,6 +80,7 @@ VOID physic::anim::Timer( VOID )
 
   /* Hanlde animation objects */
   Navigation.Response(this);
+  World.DynamicUpdate(World.CollisionUpdate());
 } /* End of 'physic::anim::Timer' function */
 
 /* Operator '<<' - add world to animation function.

@@ -19,6 +19,8 @@ namespace physic
   public:
     /* Class constructor function */
     world_collision( VOID );
+
+    std::vector<collision_info> CollisionUpdate( VOID );
   };
 }
 

@@ -51,6 +51,9 @@ namespace physic
     /* Enable/disable pause function */
     BOOL SetPause( BOOL IsToBePause );
 
+    /* Change pause state function */
+    VOID ChangePause( VOID );
+
     /* Add time shift function */
     VOID SetTimeShift( DBL Shift );
   }; /* End of 'timer' class */
