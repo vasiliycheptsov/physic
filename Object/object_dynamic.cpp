@@ -31,8 +31,8 @@ physic::vec physic::object_dynamic::CountImpuls( physic::collision_info &Info,
   DBL Res = max(0, (-(Param2->Velocity - Param1->Velocity) & Info.Normal) /
                    (1.0 / Param1->Mass + 1.0 / Param2->Mass));
   if (IsCountForFirst)
-    return Info.Normal * Res;
-  return Info.Normal * (-Res);
+    return Info.Normal * (((Param1->Velocity & Info.Normal) > 0) ? Res : 0);
+  return Info.Normal * (((Param2->Velocity & (-Info.Normal)) > 0) ? (-Res) : 0);
 } /* End of 'physic::object_dynamic::CountImpuls' function */
 
 /* END OF 'object_dynamic.cpp' FILE */

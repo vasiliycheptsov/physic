@@ -1,0 +1,7 @@
+ - Movement prediction
+ - AABB calculation
+ - Broad phase collision detection (2d grid)
+ - Narrow phase collision detection (simple sphere - sphere; sphere - plane tests)
+ - Contact clouds decomposition (boost::disjoint_sets)
+ - Constraints solver (Projected Gauss-seidel или эквивалентный Sequential Impulses)
+    ”читываем пока контакт поко€ и трение, хот€ все формулируем единообразно.

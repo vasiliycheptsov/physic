@@ -195,3 +195,11 @@ profiler <Run program profiler>: Start: 0.187000, Finish: 8.281000, Delta: 8.094
 profiler <Main program profiler>: Start: 0.062000, Finish: 8.281000, Delta: 8.219000
 profiler <Run program profiler>: Start: 0.203000, Finish: 6.609000, Delta: 6.406000
 profiler <Main program profiler>: Start: 0.062000, Finish: 6.609000, Delta: 6.547000
+profiler <Run program profiler>: Start: 0.937000, Finish: 7.921000, Delta: 6.984000
+profiler <Main program profiler>: Start: 0.187000, Finish: 7.968000, Delta: 7.781000
+profiler <Run program profiler>: Start: 0.468000, Finish: 7.406000, Delta: 6.938000
+profiler <Main program profiler>: Start: 0.062000, Finish: 7.421000, Delta: 7.359000
+profiler <Run program profiler>: Start: 0.906000, Finish: 10.390000, Delta: 9.484000
+profiler <Main program profiler>: Start: 0.062000, Finish: 10.406000, Delta: 10.344000
+profiler <Run program profiler>: Start: 0.250000, Finish: 6.390000, Delta: 6.140000
+profiler <Main program profiler>: Start: 0.062000, Finish: 6.406000, Delta: 6.344000

@@ -1,0 +1,22 @@
+struct a_t 
+{
+  virtual void foo()  = 0;
+  virtual ~a_t(){}
+};
+
+struct b_t: a_t 
+{
+   b_t() {}
+   b_t(int i) {}
+
+  void foo() {}
+};
+
+typedef boost::shared_ptr<b_t> b_ptr; 
+typedef boost::shared_ptr<a_t> a_ptr; 
+
+b_ptr b = boost::make_shared<b_t>(5);
+
+a_ptr a = boost::dynamic_pointer_cast<a_t>(b);
+
+a->foo();

@@ -1,0 +1,28 @@
+     
+typedef vec_prop_map< std::vector< size_t > >   ss_rank_type;
+typedef vec_prop_map< std::vector< size_t > >   ss_parent_type;
+typedef boost::disjoint_sets< ss_rank_type, ss_parent_type >       ss_type;
+
+ss_rank_type dset_rank_; // можно переиспользовать
+ss_parent_type dset_parent_; 
+
+dset_rank_.resize(objects_size);
+dset_parent_.resize(objects_size);
+
+ss_type dset(dset_rank_, dset_parent_);
+for (int i = 0; i < objects_size; i++)
+    dset.make_set(i);
+
+
+for (int i=0;i<num_contacts;i++)
+{
+    if (something)
+        dset.union_set(contact(i)->objectA, contact(i)->objectB);
+}
+
+for (int i = 0; i < objects_size; i++)
+    for (int j = 0; j < objects_size; j++)
+        if (dset.find_set(i) == dset.find_set(j))
+        {
+           // objects i and j on the same cloud 
+        }
